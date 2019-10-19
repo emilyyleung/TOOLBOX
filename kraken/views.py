@@ -34,7 +34,6 @@ def table_getFilenames(pathobj, appendList):
     print("RUNNING getFilenames")
     try:
         try:
-            print("PAT")
             print(pathobj)
             # Remove unnecessary spaces before/after the file name
             folder = pathobj["filepath"].strip()
@@ -80,13 +79,14 @@ def table_makeFilepathObj(path, listToAppend):
         x = x.replace("K:", prefix)
 
         pathObj["filepath"] = x
-        
-        listdir(pathObj["filepath"])
+
+        # listdir(pathObj["filepath"])
 
         pathObj["error"] = "All Good"
 
         testList = []
-        
+
+
         testfiles = [testList.append(f) for f in listdir(pathObj["filepath"]) if isfile(join(pathObj["filepath"], f))]
 
         if testList == []:
@@ -95,6 +95,7 @@ def table_makeFilepathObj(path, listToAppend):
             pathObj["empty"] = "false"
     except:
         pathObj["error"] = "SORRY, there's a problem with at least ONE of the input directories"
+        pathObj["empty"] = "false"
 
     listToAppend.append(pathObj)
 
@@ -131,7 +132,7 @@ def table_runSingleDirectory(directory, filepaths, files):
 
 def kraken_app(request):
     log = []
-    print("FORM")
+    print("KRAKEN")
     # If the form is submitted i.e. POST request
     if request.method == 'POST' and 'visualiser' in request.POST:
         print("POSTED")

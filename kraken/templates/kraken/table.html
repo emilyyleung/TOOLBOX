@@ -44,7 +44,7 @@
             <p class="noselect">
                 <ol>
                     {% for path in out.filepaths %}
-                    <li class="noselect" style='{% if not "All Good" in path.error|safe %}color: red{% elif path.empty|safe == "true" %}color: orange{% endif %}'><b>{{ path.filepath|safe }}</b></li>
+                    <li class="noselect" style='{% if "SORRY" in path.error|safe %}color: red{% elif path.empty|safe == "true" %}color: orange{% endif %}'><b>{{ path.filepath|safe }}</b></li>
                     {% endfor %}
 
                     {% for l in out.log %}
