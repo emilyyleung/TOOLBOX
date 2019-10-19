@@ -4,13 +4,13 @@ data = {
 			"title": "List Compare",
 			"description": "Multiline input for comparing lists",
 			"logo": "fas fa-list-ol",
-			"url": "http://localhost:8000/list/textarea"
+			"url": "http://localhost:7000/listcompare/"
 		},
 		{
 			"title": "Kraken",
 			"description": "Returns a table of files in folder",
 			"logo": "far fa-folder",
-			"url": "http://localhost:7000/kraken/table"
+			"url": "http://localhost:7000/kraken/"
 		},
 		{
 			"title": "Apple",
