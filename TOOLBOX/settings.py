@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'home.apps.HomeConfig',
     'listcompare.apps.ListcompareConfig',
+    'kraken.apps.KrakenConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
