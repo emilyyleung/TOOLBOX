@@ -19,5 +19,6 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('home.urls')),
-    path('listcompare/', include('listcompare.urls'))
+    path('listcompare/', include('listcompare.urls')),
+    path('kraken/', include('kraken.urls')),
 ]
