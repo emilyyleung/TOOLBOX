@@ -86,7 +86,6 @@ def table_makeFilepathObj(path, listToAppend):
 
         testList = []
 
-
         testfiles = [testList.append(f) for f in listdir(pathObj["filepath"]) if isfile(join(pathObj["filepath"], f))]
 
         if testList == []:
