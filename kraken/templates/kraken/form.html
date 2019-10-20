@@ -1,11 +1,21 @@
 {% extends "kraken/base.html" %}
 {% load crispy_forms_tags %}
 {% block content %}
-<form method="POST" class="post-form">  
-        {% csrf_token %}  
-        {{ form|crispy }}
-        <p><em>Separate multiple paths with commas: ,</em></p>
-        <button type="submit" class="save btn btn-info" name="visualiser">Search</button>
-        <!-- <button type="submit" class="save btn btn-info" name="practical">Text View</button> -->
-</form> 
+<div class="container-fluid noselect">
+	<div class="jumbotron jumbotron-fluid shadow-none">
+        <h1 class="display-6"><span><i class="far fa-folder" style="color: Orange"></i> </span>Kraken</h1>
+        <p class="lead"><em>Returns a table of files from a list of directories</em></p>
+    </div>
+    <div class="row">
+    	<div class="col-xl-4 col-lg-6 col-md-6 col-sm-6">
+			<form method="POST" class="post-form">  
+			    {% csrf_token %}
+			    {{ form|crispy }}
+			    <p><em>Separate multiple paths with commas: ,</em></p>
+			    <button type="submit" class="save btn btn-info" name="visualiser">Search</button>
+			    <!-- <button type="submit" class="save btn btn-info" name="practical">Text View</button> -->
+			</form>
+		</div>
+	</div> 
+</div>
 {% endblock content %}
