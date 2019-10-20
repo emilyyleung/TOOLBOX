@@ -21,4 +21,5 @@ urlpatterns = [
     path('', include('home.urls')),
     path('listcompare/', include('listcompare.urls')),
     path('kraken/', include('kraken.urls')),
+    path('scaleconverter/', include('scaleconverter.urls')),
 ]

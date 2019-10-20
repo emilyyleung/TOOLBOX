@@ -1,0 +1,61 @@
+{% extends "scaleconverter/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="container-fluid noselect">
+    <div class="row">
+        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6">
+            <form method="POST" class="post-form">  
+                    {% csrf_token %}  
+                    <div class="form-row">
+                    	<div class="col">
+                            <div class="alert alert-secondary" role="alert"><strong>INPUT</strong></div>
+                            <div>
+                		    	{{ form.view_scale|as_crispy_field }}
+                            </div>
+                            <div>
+                                {{ form.original_drawing_size|as_crispy_field }}
+                            </div>
+                            <div>
+                                {{ form.printed_drawing_size|as_crispy_field }}
+                            </div>
+            		    </div>
+            	    </div>
+                    <p><em>Determine the original scale and paper size<br/>then new paper size</em></p>
+                    <button type="submit" class="save btn btn-info" name="visualiser">CONVERT</button>
+            </form> 
+
+        </div>
+
+        <br/>
+
+        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6">
+
+            {% if out %}
+                <div class="alert alert-secondary" role="alert"><strong>OUTPUT</strong></div>
+
+                <table class="table table-bordered">
+                    <tbody>
+                        <tr>
+                            <th></th>
+                            <td><b>PAPER SIZE</b></td>
+                            <td><b>SCALE</b></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">ORIGINAL DRAWING</th>
+                            <td>{{ out.original_paper }}</td>
+                            <td>@ 1:{{ out.original_scale }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">NEW DRAWING</th>
+                            <td>{{ out.new_paper }}</td>
+                            <td>@ 1:{{ out.new_scale }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            {% endif %}
+
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
