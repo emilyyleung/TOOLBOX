@@ -2,13 +2,13 @@
 {% load crispy_forms_tags %}
 {% block content %}
 
-<div class="container-fluid">
+<div class="container-fluid noselect">
 	<div class="jumbotron jumbotron-fluid shadow-none">
         <h1 class="display-6"><span><i class="fas fa-list-ol" style="color: Orange"></i> </span>List Compare</h1>
         <p class="lead"><em>Find the difference between two lists</em></p>
     </div>
 	
-	<div class="col noselect">
+	<div class="col">
 		<form method="POST" class="post-form">  
 	        {% csrf_token %}  
 	        <div class="form-row">
