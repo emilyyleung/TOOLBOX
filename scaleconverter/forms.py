@@ -25,7 +25,7 @@ PAPERSIZES = (
 )
 
 class ScaleConverterForm(forms.Form):
-    view_scale = forms.ChoiceField(choices=SCALES)
+    original_drawing_scale = forms.ChoiceField(choices=SCALES)
     original_drawing_size = forms.ChoiceField(choices=PAPERSIZES)
     printed_drawing_size = forms.ChoiceField(choices=PAPERSIZES)
 

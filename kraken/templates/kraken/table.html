@@ -24,44 +24,39 @@
         <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.print.min.js"></script>
         <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.colVis.min.js"></script>
 
-        <!-- <style type="text/css">
-            .buttons-html5 {
-                background-color: #33b5e5;
-                border: none;
-                color: white;
-                padding: 5px 5px;
-                margin-bottom: 10px;
-                text-align: center;
-                text-decoration: none;
-                display: inline-block;
-                font-size: 16px;
-            }
+        <div class="container-fluid noselect">
 
-        </style> -->
-
-        <div class="noselect">
-            <p class="noselect">Files in:</p>
-            <p class="noselect">
-                <ol>
-                    {% for path in out.filepaths %}
-                    <li class="noselect" style='{% if "SORRY" in path.error|safe %}color: red{% elif path.empty|safe == "true" %}color: orange{% endif %}'><b>{{ path.filepath|safe }}</b></li>
-                    {% endfor %}
-
-                    {% for l in out.log %}
-                        {% if l == "[]" %}
-                            
-                        {% else %}
-                            <li class="noselect" style='color: orange'><b>{{ l }}</b></li>
-                        {% endif %}
-                    {% endfor %}
-                </ol>
-            </p>
-
-            <a class="button noselect" href="{% url 'tool-kraken' %}">Back</a>
-
-            <!-- <button class="btn" id="copy-table-button" data-clipboard-target="#dtOrderExample">Copy</button> -->
+            <h1 class="display-6"><span><i class="far fa-folder" style="color: Orange"></i> </span>Kraken</h1>
+            <p class="lead"><em>Returns a table of files from a list of directories</em></p>
 
             <hr/>
+
+            <div class="noselect">
+                <div class="alert alert-secondary" role="alert">
+                    <p class="noselect">Files in:</p>
+                    <p class="noselect">
+                        <ol>
+                            {% for path in out.filepaths %}
+                            <li class="noselect" style='{% if "SORRY" in path.error|safe %}color: red{% elif path.empty|safe == "true" %}color: orange{% endif %}'><b style="word-wrap: break-word; white-space: normal;">{{ path.filepath|safe }}</b></li>
+                            {% endfor %}
+
+                            {% for l in out.log %}
+                                {% if l == "[]" %}
+                                    
+                                {% else %}
+                                    <li class="noselect" style='color: orange'><b>{{ l }}</b></li>
+                                {% endif %}
+                            {% endfor %}
+                        </ol>
+                    </p>
+                </div>
+
+                <a class="button noselect" href="{% url 'tool-kraken' %}">Back</a>
+
+                <!-- <button class="btn" id="copy-table-button" data-clipboard-target="#dtOrderExample">Copy</button> -->
+
+                <hr/>
+            </div>
         </div>
 
         <!-- ANOTHER TABLE -->

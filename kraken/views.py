@@ -11,11 +11,6 @@ from kraken.forms import DirectoryForm
 
 prefix = "\\\sydsrv01\\projects\\"
 
-def table_errmessage(message, filepaths, outObject):
-    outObject["filepaths"] = filepaths
-    outObject["errmessage"] = message
-    return outObject
-
 def table_getFileType(file):
     filetype = file.split(".")[-1]
     # print(filetype)
