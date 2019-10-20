@@ -20,6 +20,7 @@ def table_getFileType(file):
 def table_splitDirectory(directories, listToAppend):
     paths = directories.split(",")
     allpaths = [x for x in paths if x]
+
     for i in allpaths:
         table_makeFilepathObj(i, listToAppend)
         
@@ -34,8 +35,6 @@ def table_getFilenames(pathobj, appendList):
             folder = pathobj["filepath"].strip()
         except:
             folder = pathobj
-            print("---------------")
-            print(pathobj)
         
         filelist = []
 
@@ -71,26 +70,24 @@ def table_makeFilepathObj(path, listToAppend):
 
     try:
         x = path.replace("\r\n", "")
-        x = x.replace("K:", prefix)
+        # x = x.replace("K:", prefix)
 
-        pathObj["filepath"] = x
+        pathObj["filepath"] = x.strip()
 
-        # listdir(pathObj["filepath"])
-
-        pathObj["error"] = "All Good"
+        listdir(pathObj["filepath"])
 
         testList = []
-
         testfiles = [testList.append(f) for f in listdir(pathObj["filepath"]) if isfile(join(pathObj["filepath"], f))]
 
         if testList == []:
             pathObj["empty"] = "true"
         else:
             pathObj["empty"] = "false"
-    except:
-        pathObj["error"] = "SORRY, there's a problem with at least ONE of the input directories"
-        pathObj["empty"] = "false"
+        pathObj["error"] = "All Good"
 
+    except Exception as e:
+        pathObj["error"] = "SORRY, there's a problem with at least ONE of the input directories"
+        print(e)
     listToAppend.append(pathObj)
 
     return listToAppend
