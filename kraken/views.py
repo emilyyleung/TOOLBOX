@@ -181,9 +181,9 @@ def kraken_app(request):
                     print("3------------------------------")
                     print('Error on line {}'.format(sys.exc_info()[-1].tb_lineno), type(e).__name__, e)
 
-                return render(request, "kraken/table.html", {"out": out})
+                return render(request, "kraken/form.html", {"form": dirForm,"out": out})
             except:
-                return render(request, "kraken/table.html", {"out": out})
+                return render(request, "kraken/form.html", {"form": dirForm,"out": out})
 
     else:
         # The form we created in forms.py
