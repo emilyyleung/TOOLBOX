@@ -5,6 +5,22 @@ from listcompare.forms import ListCheckerForm
 
 # Create your views here.
 
+def check_list_difference(listA, listB):
+	return list(set(listA) - set(listB))
+
+def check_list_intersection(listA, listB):
+	return list(set(listA) & set(listB))
+
+def splitListToItems(inputList, listToAppend):
+    clean_list = inputList.split(",")
+    all_items = [x for x in clean_list if x]
+    for i in all_items:
+        x = i.replace("\r\n", "")
+        x = i.strip()
+        # x = x.replace("K:", prefix)
+        listToAppend.append(x)
+    return listToAppend
+
 def compare_list(request):
 	print("FORM")
 

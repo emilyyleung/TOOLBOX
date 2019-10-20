@@ -3,7 +3,11 @@
 {% block content %}
 
 <div class="container-fluid">
-		
+	<div class="jumbotron jumbotron-fluid shadow-none">
+        <h1 class="display-6"><span><i class="fas fa-list-ol" style="color: Orange"></i> </span>List Compare</h1>
+        <p class="lead"><em>Find the difference between two lists</em></p>
+    </div>
+	
 	<div class="col noselect">
 		<form method="POST" class="post-form">  
 	        {% csrf_token %}  
