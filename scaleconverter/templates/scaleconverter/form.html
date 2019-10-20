@@ -28,6 +28,7 @@
                     
                     <button type="submit" class="save btn btn-info" name="visualiser">CONVERT</button>
             </form> 
+            <br/>
 
         </div>
 
@@ -47,13 +48,13 @@
                         </tr>
                         <tr>
                             <th scope="row">ORIGINAL DRAWING</th>
-                            <td>{{ out.original_paper }}</td>
-                            <td>@ 1:{{ out.original_scale }}</td>
+                            <td><b>{{ out.original_paper }}</b></td>
+                            <td><b>@ 1:{{ out.original_scale }}</b></td>
                         </tr>
                         <tr>
                             <th scope="row">NEW DRAWING</th>
-                            <td>{{ out.new_paper }}</td>
-                            <td>@ 1:{{ out.new_scale }}</td>
+                            <td><b>{{ out.new_paper }}</b></td>
+                            <td><b>@ 1:{{ out.new_scale }}</b></td>
                         </tr>
                     </tbody>
                 </table>
