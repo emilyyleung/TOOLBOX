@@ -13,9 +13,11 @@
 	        {% csrf_token %}  
 	        <div class="form-row">
 	        	<div style="text-align: center" class="form-group col-md-6 mb-0">
+	        		{{ form.listA_title|as_crispy_field }}
 	        		<h4><b>{{ form.listA|as_crispy_field }}</b></h4>
 	        	</div>
 	        	<div style="text-align: center" class="form-group col-md-6 mb-0">
+	        		{{ form.listB_title|as_crispy_field }}
 	        		<h4><b>{{ form.listB|as_crispy_field }}</b></h4>
 	        	</div>
 	        </div>
