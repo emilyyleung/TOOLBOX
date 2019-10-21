@@ -1,0 +1,59 @@
+{% load crispy_forms_tags %}
+<!DOCTYPE html>  
+<html lang="en">  
+    <head>  
+        <meta charset="UTF-8">  
+        <title>Toolbox - Kraken</title>
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+        
+        <!-- Bootstrap core CSS -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Material Design Bootstrap -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/css/mdb.min.css" rel="stylesheet">
+        
+        <style>
+            ol {
+                list-style-type: none;
+            }
+            .error{
+                color: red;
+            }
+            .noselect{
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+            }
+
+            .stuck {
+                position:relative;
+            }
+            #kraken {
+                animation: bobble 2s infinite;
+                position: fixed;
+                right: 0;
+                margin-right: 50px;
+                bottom: 0;
+                margin-bottom: 60px;
+            }
+            @keyframes bobble {
+                0% {
+                    transform: translate3d(50px, 40px, 0px);
+                    animation-timing-function: ease-in;
+                }
+                50% {
+                    transform: translate3d(50px, 50px, 0px);
+                    animation-timing-function: ease-out;
+                }
+                100% {
+                    transform: translate3d(50px, 40px, 0px);
+                }
+            }
+        </style>
+    </head>  
+    <body style="padding: 30px">  
+        {% block content %}{% endblock %}
+    </body>  
+</html>  

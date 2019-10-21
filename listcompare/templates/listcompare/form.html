@@ -2,9 +2,13 @@
 {% load crispy_forms_tags %}
 {% block content %}
 
-<div class="container-fluid">
-		
-	<div class="col noselect">
+<div class="container-fluid noselect">
+	<div class="jumbotron jumbotron-fluid shadow-none">
+        <h1 class="display-6"><span><i class="fas fa-list-ol" style="color: Orange"></i> </span>List Compare</h1>
+        <p class="lead"><em>Find the difference between two lists</em></p>
+    </div>
+	
+	<div class="col">
 		<form method="POST" class="post-form">  
 	        {% csrf_token %}  
 	        <div class="form-row">
@@ -17,7 +21,7 @@
 	        </div>
 	        <br/>
 	        <div style="text-align: center">
-		        <p><em>Separate multiple list items with a new line</em></p>
+		        <p><em><b>Separate multiple list items with a new line</b></em></p>
 		        <button type="submit" class="save btn btn-info" name="visualiser">Compare Lists</button>
 		        <!-- <button type="submit" class="save btn btn-info" name="practical">Text View</button> -->
 		    </div>
