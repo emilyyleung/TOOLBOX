@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
 
+import re
+
 from listcompare.forms import ListCheckerForm
 
 # Create your views here.
@@ -36,12 +38,19 @@ def compare_list(request):
 
 			multiline_input_A = listForm.cleaned_data['listA']
 			multiline_input_B = listForm.cleaned_data['listB']
-			
+
 			multiline_list_A.append(multiline_input_A)
 			multiline_list_B.append(multiline_input_B)
 
-			multiline_array_A = multiline_list_A[0].split("\r\n")
-			multiline_array_B = multiline_list_B[0].split("\r\n")
+
+			string_A = multiline_list_A[0]
+			string_B = multiline_list_B[0]
+
+			multiline_array_A = re.findall(r"\S+", string_A)
+			multiline_array_B = re.findall(r"\S+", string_B)
+
+			# multiline_array_A = multiline_list_A[0].split("\r\n")
+			# multiline_array_B = multiline_list_B[0].split("\r\n")
 
 			# print(multiline_array_A)
 			# print(multiline_array_B)
