@@ -58,14 +58,6 @@ def compare_list(request):
 			# print(multiline_array_A)
 			# print(multiline_array_B)
 
-			obj_A = {}
-			obj_A["list_length"] = str(len(multiline_array_A))
-			obj_A["u_list_length"] = len(list(set(multiline_array_A)))
-
-			obj_B = {}
-			obj_B["list_length"] = len(multiline_array_B)
-			obj_B["u_list_length"] = len(list(set(multiline_array_B)))
-
 			unique_set = list(set(multiline_array_A + multiline_array_B))
 
 			out = {}
@@ -97,6 +89,16 @@ def compare_list(request):
 				just_A = check_list_difference(multiline_array_A, multiline_array_B)
 				just_B = check_list_difference(multiline_array_B, multiline_array_A)
 				int_AB = check_list_intersection(multiline_array_A, multiline_array_B)
+
+				obj_A = {}
+				obj_A["list_length"] = str(len(multiline_array_A))
+				obj_A["u_list_length"] = len(list(set(multiline_array_A)))
+				obj_A["A_only_list_length"] = len(just_A)
+
+				obj_B = {}
+				obj_B["list_length"] = len(multiline_array_B)
+				obj_B["u_list_length"] = len(list(set(multiline_array_B)))
+				obj_A["B_only_list_length"] = len(just_B)
 
 				just_A.sort()
 				just_B.sort()
