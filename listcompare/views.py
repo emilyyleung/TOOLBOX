@@ -46,11 +46,18 @@ def compare_list(request):
 			string_A = multiline_list_A[0]
 			string_B = multiline_list_B[0]
 
-			multiline_array_A = re.findall(r"[\w\t ]+", string_A)
-			multiline_array_B = re.findall(r"[\w\t ]+", string_B)
+			# multiline_array_A = re.findall(r"[\w\t ]+", string_A)
+			# multiline_array_B = re.findall(r"[\w\t ]+", string_B)
+
+			multiline_array_A = re.findall(r"\b.+\b", string_A)
+
+			multiline_array_B = re.findall(r"\b.+\b", string_B)
 
 			print(multiline_list_A)
 			print(multiline_array_A)
+
+			print(multiline_list_B)
+			print(multiline_array_B)
 
 			# multiline_array_A = multiline_list_A[0].split("\r\n")
 			# multiline_array_B = multiline_list_B[0].split("\r\n")
